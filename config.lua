@@ -44,19 +44,29 @@ require("mason-nvim-dap").setup({
   ensure_installed = {
     "js-debug-adapter"
   },
+  enabled = true,
   handlers = {}
 })
 ]]
+
 -- dap javascript/typescript
 require("dap-vscode-js").setup({
 
   debugger_path = vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter',
   debugger_cmd = { 'js-debug-adapter' },
-  adapters = {'chrome', 'pwa-chrome'}
+  adapters = {'chrome', 'pwa-node','pwa-chrome'}
 })
 
 for _, language in ipairs({ "typescript", "javascript" }) do
   require("dap").configurations[language] = {
+{
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach Program (pwa-node, select pid)",
+      cwd = "${workspaceFolder}",
+      processId = require 'dap.utils'.pick_process,
+      skipFiles = { "<node_internals>/**" },
+    },
     {
       type = "pwa-chrome",
       request = "launch",
