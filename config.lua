@@ -1,3 +1,6 @@
+-- Vim Opts
+vim.opt.clipboard:append("unnamedplus") -- I dumb no like registers
+
 -- Built-in Plugins 
 -- -------------------
 lvim.builtin.alpha.active = true
