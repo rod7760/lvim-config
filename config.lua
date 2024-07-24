@@ -1,13 +1,13 @@
 -- Vim Opts
 vim.opt.clipboard:append("unnamedplus") -- I dumb no like registers
 
--- Built-in Plugins 
+-- Built-in Plugins
 -- -------------------
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.dap.active = true
 
--- which_key 
+-- which_key
 lvim.builtin.which_key.mappings["H"] = {
   name = "Harpoon",
   m = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marks"},
@@ -38,7 +38,8 @@ lvim.plugins = {
   -- python debugging
   {"nvim-neotest/neotest-python",
     dependencies = {"mfussenegger/nvim-dap-python",
-      "nvim-neotest/neotest"},
+      "nvim-neotest/neotest",
+      "nvim-neotest/nvim-nio"},
     config = function()
       require('dap-python').setup('~/.venvs/debugpy/bin/python')
       require("neotest").setup({
@@ -54,6 +55,8 @@ lvim.plugins = {
         }
       })
     end
-  }
+  },
+  -- whitespace
+  {"ntpeters/vim-better-whitespace"}
 }
 
