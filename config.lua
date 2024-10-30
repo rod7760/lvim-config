@@ -1,5 +1,6 @@
 -- Vim Opts
 vim.opt.clipboard:append("unnamedplus") -- I dumb no like registers
+vim.opt.relativenumber = true -- relative line numbers
 
 -- Built-in Plugins
 -- -------------------
