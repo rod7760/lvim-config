@@ -24,6 +24,23 @@ lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
 
+-- treesitter
+lvim.builtin.treesitter.ensure_installed = {
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "cmake",
+    "rst",
+}
+
+
 -- Custom Plugins
 -- -------------------
 lvim.plugins = {
