@@ -2,6 +2,13 @@
 vim.opt.clipboard:append("unnamedplus") -- I dumb no like registers
 vim.opt.relativenumber = true -- relative line numbers
 
+-- make .py.j2 use python lsp and syntax highlight
+vim.filetype.add({
+  pattern = {
+    [ ".*.py.j2" ]  = "python",
+  },
+})
+
 -- Built-in Plugins
 -- -------------------
 lvim.builtin.alpha.active = true
