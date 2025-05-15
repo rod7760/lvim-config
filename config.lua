@@ -16,11 +16,13 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.dap.active = true
 
 -- which_key
+-- harpoon
 lvim.builtin.which_key.mappings["H"] = {
   name = "Harpoon",
   m = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marks"},
   x = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark File"},
 }
+-- neotest
 lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('neotest').run.run()<cr>",
   "Test Method" }
 lvim.builtin.which_key.mappings["dM"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
@@ -30,6 +32,13 @@ lvim.builtin.which_key.mappings["df"] = {
 lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
+-- toggle term
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
+  v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
+  h = { "<cmd>2ToggleTerm size=10 direction=horizontal<cr>", "Split horizontal" },
+}
 
 -- treesitter
 lvim.builtin.treesitter.ensure_installed = {
